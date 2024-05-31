@@ -136,4 +136,9 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+REST_FRAMEWORK = {
+    'SEARCH_PARAM': 'name',
+    'ORDERING_PARAM': 'sort',
+}
+
 CORS_ALLOW_ALL_ORIGINS = True
