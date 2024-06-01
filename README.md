@@ -5,7 +5,7 @@
 1. Clone the repository:
    ```bash
    git clone https://github.com/MuhammedAnasEP/User-Management.git
-   cd user management
+   cd User-Management
    
 2. Create a virtual environment and activate it:
 
