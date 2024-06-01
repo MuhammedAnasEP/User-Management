@@ -16,6 +16,13 @@ class RegistrationSerializer(serializers.ModelSerializer):
         }
 
     def save(self):
+        """
+        Save the user registration data to the database.
+        This method creates a new user instance based on the validated data provided.
+        It checks if a user with the same email already exists in the database. 
+        If it does, a `ValidationError` is raised with the message "A user with that email already exists."
+        If the passwords do not match, a `ValidationError` is raised with the message "Passwords do not match!".
+        """
         user = User(
             first_name=self.validated_data['first_name'],
             last_name=self.validated_data['last_name'],
