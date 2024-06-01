@@ -37,6 +37,8 @@
 
 7. Resync Sequances:
 
+     Handles the command to resync the sequences of the UserProfile table.
+      
      Note:You need to change 'pg_get_serial_sequence' code in resync_sequences.py file if your not using PostgresSQL
          After the populate_users the id not auto incremented that why i created this command to resync the squance.
 
