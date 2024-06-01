@@ -11,7 +11,6 @@ from django.middleware import csrf
 from rest_framework_simplejwt import tokens, serializers, views, exceptions as jwt_exceptions
 from .serializers import RegistrationSerializer, LoginSerializer, UserSerializer
 
-
 # Create your views here.
 
 def get_user_tokens(user):

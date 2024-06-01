@@ -5,6 +5,7 @@ from rest_framework.filters import OrderingFilter, SearchFilter
 from rest_framework.response import Response
 from django.shortcuts import get_object_or_404 
 from rest_framework import status
+from rest_framework.permissions import IsAuthenticated
 from .models import UserProfile
 from .serializers import UserProfileSerializer
 from .pagination import UserListPagination
@@ -12,6 +13,7 @@ from .pagination import UserListPagination
 # Create your views here.
 
 class UsersListView(ListCreateAPIView):
+    permission_classes = [IsAuthenticated]
     queryset = UserProfile.objects.all()
     serializer_class = UserProfileSerializer
     pagination_class = UserListPagination
@@ -29,6 +31,7 @@ class UsersListView(ListCreateAPIView):
 
 
 class UserDetailsView(APIView):
+    permission_classes = [IsAuthenticated]
 
     def get(self, request, id):
         try:
