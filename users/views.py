@@ -12,7 +12,7 @@ from .pagination import UserListPagination
 
 # Create your views here.
 
-class UsersListView(ListCreateAPIView):
+class UserProfileListAndCreateView(ListCreateAPIView):
     permission_classes = [IsAuthenticated]
     queryset = UserProfile.objects.all()
     serializer_class = UserProfileSerializer
@@ -30,7 +30,7 @@ class UsersListView(ListCreateAPIView):
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
-class UserDetailsView(APIView):
+class UserProfileDetailsView(APIView):
     permission_classes = [IsAuthenticated]
 
     def get(self, request, id):
