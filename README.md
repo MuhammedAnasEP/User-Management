@@ -4,7 +4,7 @@
 
 1. Clone the repository:
    ```bash
-   git clone <repo_url>
+   git clone https://github.com/MuhammedAnasEP/User-Management.git
    cd user management
    
 2. Create a virtual environment and activate it:
@@ -25,17 +25,17 @@
      Or you want to connect with other engines like sqlite, MySQL etc. You want to change the engine section also.
      The sqlite connection code is commented in my setting file.
 
-6. Run migrations:
-7. 
+5. Run migrations:
+ 
    ```bash
     python manage.py makemigrations
     python manage.py migrate
 
-8. Populate the database with sample data:
+6. Populate the database with sample data:
    ```bash
     python manage.py populate_users
 
-9. Resync Sequances:
+7. Resync Sequances:
 
      Note:You need to change 'pg_get_serial_sequence' code in resync_sequences.py file if your not using PostgresSQL
          After the populate_users the id not auto incremented that why i created this command to resync the squance.
@@ -73,26 +73,28 @@
     GET /api/auth/user: for fetch the data of current logined user
   
 
-Example Request
-GET /api/users?page=1&limit=10&name=James&sort=-age
-Response:
+- Example Request:
+  
+   GET /api/users?page=1&limit=10&name=James&sort=-age
 
-{
-    "count": 1,
-    "next": null,
-    "previous": null,
-    "results": [
-        {
-            "id": 507,
-            "first_name": "James",
-            "last_name": "Butt",
-            "company_name": "Benton, John B Jr",
-            "age": 70,
-            "city": "New Orleans",
-            "state": "LA",
-            "zip": 70116,
-            "email": "jbutt@gmail.com",
-            "web": "http://www.bentonjohnbjr.com"
-        }
-    ]
-}
+- Response:
+   ```
+   {
+       "count": 1,
+       "next": null,
+       "previous": null,
+       "results": [
+           {
+               "id": 507,
+               "first_name": "James",
+               "last_name": "Butt",
+               "company_name": "Benton, John B Jr",
+               "age": 70,
+               "city": "New Orleans",
+               "state": "LA",
+               "zip": 70116,
+               "email": "jbutt@gmail.com",
+               "web": "http://www.bentonjohnbjr.com"
+           }
+       ]
+   }
