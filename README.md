@@ -9,12 +9,14 @@
    
 2. Create a virtual environment and activate it:
 
-  python -m venv venv Or virtualenv venv
-  source venv/bin/activate   # On Windows, use `venv\Scripts\activate`
+   ```bash
+     python -m venv venv Or virtualenv venv
+     source venv/bin/activate   # On Windows, use `venv\Scripts\activate`
 
 3. Install dependencies:
 
-  pip install -r requirements.txt
+   ```bash
+     pip install -r requirements.txt
 
 4. Connect Database:
    
@@ -24,27 +26,31 @@
      The sqlite connection code is commented in my setting file.
 
 6. Run migrations:
-
+7. 
+   ```bash
     python manage.py makemigrations
     python manage.py migrate
 
-7. Populate the database with sample data:
-
+8. Populate the database with sample data:
+   ```bash
     python manage.py populate_users
 
-8. Resync Sequances:
+9. Resync Sequances:
 
      Note:You need to change 'pg_get_serial_sequence' code in resync_sequences.py file if your not using PostgresSQL
          After the populate_users the id not auto incremented that why i created this command to resync the squance.
-   
+
+   ```bash
      python manage.py resync_sequences
 
-8: Test Project (Optional):
+8. Test Project (Optional):
 
+   ```bash
     python manage.py test
   
 9. Run the server:
-
+    
+   ```bash
     python manage.py runserver
 
 ## API Endpoints
