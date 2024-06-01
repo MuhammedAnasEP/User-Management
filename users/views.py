@@ -30,7 +30,6 @@ class UserProfileListAndCreateView(ListCreateAPIView):
         If the serializer is valid, the data is saved and a response with the serialized data and a status code of 201 is returned.
         If the serializer is not valid, a response with the serializer errors and a status code of 400 is returned.
         """
-
         serializer = self.get_serializer(data=request.data)
         if serializer.is_valid(raise_exception=True):
             serializer.save()
@@ -40,7 +39,9 @@ class UserProfileListAndCreateView(ListCreateAPIView):
 
 
 class UserProfileDetailsView(APIView):
-    """The permission_classes field specifies that only authenticated users can access these methods."""
+    """
+    The permission_classes field specifies that only authenticated users can access these methods.
+    """
     permission_classes = [IsAuthenticated]
 
     def get(self, request, id):
