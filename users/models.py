@@ -13,5 +13,8 @@ class UserProfile(models.Model):
     email = models.EmailField(unique=True)
     web = models.URLField(blank=True)
 
+    class Meta:
+        ordering = ['id']
+
     def __str__(self):
         return f"{self.first_name} {self.last_name}"
